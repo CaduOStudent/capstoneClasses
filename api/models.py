@@ -5,3 +5,6 @@ class Book(models.Model):
     description = models.TextField(blank=True)
     author = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
