@@ -5,7 +5,7 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - 8000:8000
-    enviroment:
+    environment:
       DATABASE_USER: "books"
       DATABASE_PASSWORD: "books"
       DATABASE_HOST: "db"
@@ -13,11 +13,11 @@ services:
       DEVELOPMENT_MODE: "false"
   db:
     image: postgres:17.5
-    enviroment:
+    environment:
       POSTGRES_USER: "books"
       POSTGRES_PASSWORD: "books"
     volumes:
-      - pg_data: /var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
 
 volumes:
   pg_data:
